@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		@font-face{
+	font-family: main;
+	
+}
+
+
+.main {
+	height: 600px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: none;
+	text-align: center;
+	font-family: main;
+	color: blue;
+}
+
+.body {
+	margin: 0;
+	padding: 0;
+	background-image: url();
+	background-size: 100% 100%;
+}
+
+.textbox {
+	height: 170px;
+	background: none;
+	width: 1000px;
+}
+
+.line {
+	height: 170px;
+	width: 1000px;
+	background: none;
+	margin-top: 50px;
+	display: flex;
+}
+
+.box1 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 270px;
+	top: 230px;
+	border-radius: 20px;
+	background-image: url(ly.jpg);
+	background-size: 100% 100%;
+
+}
+
+.box2 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 610px;
+	top: 230px;
+	border-radius: 20px;
+	background-image: url(zoro.jpg);
+	background-size: 100% 100%;
+}
+
+.box3 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 950px;
+	top: 230px;
+	border-radius: 20px;
+	background-image: url(usop.jpg);
+	background-size: 100% 100%;
+}
+
+.box4 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 270px;
+	top: 450px;
+	border-radius: 20px;
+	background-image: url(frenk.jpg);
+	background-size: 100% 100%;
+
+}
+
+.box5 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 610px;
+	top: 450px;
+	border-radius: 20px;
+	background-image: url(lo.png);
+	background-size: 100% 100%;
+}
+
+.box6 {
+	height: 170px;
+	width: 300px;
+	
+	transition: 0.5s;
+	position: absolute;
+	left: 950px;
+	top: 450px;
+	border-radius: 20px;
+	background-image: url(ais.jpg);
+	background-size: 100% 100%;
+}
+.h {
+	margin-top: 5px;
+}
+
+.btn {
+	height: 40px;
+	border-radius: 50px;
+	margin-top: -2px;
+	background: green;
+	color: yellow;
+}
+
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="textbox">
+			<h1 class="h">Осталось попыток:</h1>
+			<h1><span class="text">3</span></h1>
+			<h2>Найди луффи</h2>
+			<button class="btn">Перемешать</button>
+		</div>
+		<div class="line">
+			<div class="box1 "></div>
+			<div class="box2 "></div>
+			<div class="box3 "></div>
+		</div>
+		<div class="line">
+			<div class="box4 "></div>
+			<div class="box5 "></box>
+			<div class="box6 "></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		
+	
+	let attempts = 3;
+	document.querySelector('.text').innerHTML = attempts;
+
+	document.querySelector(".btn").onclick = function() {
+		document.querySelector(".box1").style.left = "610px";
+		document.querySelector(".box1").style.background = "black";
+		document.querySelector(".box1").style.backgroundImage = "none";
+
+	
+		document.querySelector(".box2").style.left = "270px";
+		document.querySelector(".box2").style.top = "450px";
+		document.querySelector(".box2").style.background = "black";
+		document.querySelector(".box2").style.backgroundImage = "none";
+
+		document.querySelector(".box3").style.left = "270px";
+		document.querySelector(".box3").style.top = "230px";
+		document.querySelector(".box3").style.background = "black";
+		document.querySelector(".box3").style.backgroundImage = "none";
+
+		document.querySelector(".box4").style.left = "950px";
+		document.querySelector(".box4").style.top = "230px";
+		document.querySelector(".box4").style.background = "black";
+		document.querySelector(".box4").style.backgroundImage = "none";
+
+		document.querySelector(".box5").style.left = "950px";
+		document.querySelector(".box5").style.top = "450px";
+		document.querySelector(".box5").style.background = "black";
+		document.querySelector(".box5").style.backgroundImage = "none";
+
+		document.querySelector(".box6").style.left = "610px";
+		document.querySelector(".box6").style.top = "400px";
+		document.querySelector(".box6").style.background = "black";
+		document.querySelector(".box6").style.backgroundImage = "none";
+	}
+		
+		document.querySelector(".box1").onclick = function() {
+			document.querySelector(".box1").style.backgroundImage = "url(ly.jpg)";
+			document.querySelector(".box1").style.backgroundSize = "100% 100%";
+			alert("хорош");
+			document.querySelector(".body").style.display = "none";
+
+		}
+
+		document.querySelector(".box2").onclick = function() {
+			document.querySelector(".box2").style.backgroundImage = "url(zoro.jpg)";
+			document.querySelector(".box2").style.backgroundSize = "100% 100%";
+			
+			attempts = attempts - 1;
+			document.querySelector('.text').innerHTML = attempts;
+			if (attempts == 0) {
+				document.querySelector(".main").style.display = "none";
+				alert("проиграл");
+			}
+
+			if (attempts == 1) {
+				alert("пробуй ещё");
+			}
+
+			if (attempts == 2) {
+				alert("пробуй ещё");
+			}
+
+		}
+
+		document.querySelector(".box3").onclick = function() {
+			document.querySelector(".box3").style.backgroundImage = "url(usop.jpg)";
+			document.querySelector(".box3").style.backgroundSize = "100% 100%";
+
+			attempts = attempts - 1;
+			document.querySelector('.text').innerHTML = attempts;
+			if (attempts == 0) {
+				document.querySelector(".main").style.display = "none";
+				alert("проиграл");
+			}
+
+			if (attempts == 1) {
+				alert("пробуй ещё");
+			}
+
+			if (attempts == 2) {
+				alert("пробуй ещё");
+			}
+
+		}
+
+		document.querySelector(".box4").onclick = function() {
+			document.querySelector(".box4").style.backgroundImage = "url(frenk.jpg)";
+			document.querySelector(".box4").style.backgroundSize = "100% 100%";
+
+			attempts = attempts - 1;
+			document.querySelector('.text').innerHTML = attempts;
+			if (attempts == 0) {
+				document.querySelector(".main").style.display = "none";
+				alert("проиграл");
+			}
+
+			if (attempts == 1) {
+				alert("пробуй ещё");
+			}
+
+			if (attempts == 2) {
+				alert("пробуй ещё");
+			}
+
+		}
+
+		document.querySelector(".box5").onclick = function() {
+			document.querySelector(".box5").style.backgroundImage = "url(lo.png)";
+			document.querySelector(".box5").style.backgroundSize = "100% 100%";
+
+			attempts = attempts - 1;
+			document.querySelector('.text').innerHTML = attempts;
+			if (attempts == 0) {
+				document.querySelector(".main").style.display = "none";
+				alert("проиграл");
+			}
+
+			if (attempts == 1) {
+				alert("пробуй ещё");
+			}
+
+			if (attempts == 2) {
+				alert("пробуй ещё");
+			}
+
+		}
+
+		document.querySelector(".box6").onclick = function() {
+			document.querySelector(".box6").style.backgroundImage = "url(ais.jpg)";
+			document.querySelector(".box6").style.backgroundSize = "100% 100%";
+
+			attempts = attempts - 1;
+			document.querySelector('.text').innerHTML = attempts;
+			if (attempts == 0) {
+				document.querySelector(".main").style.display = "none";
+				alert("проиграл");
+			}
+
+			if (attempts == 1) {
+				alert("пробуй ещё");
+			}
+
+			if (attempts == 2) {
+				alert("пробуй ещё");
+			}
+
+		}
+
+
+
+	</script>
+</body>
+</html>
